@@ -29,4 +29,3 @@ class NoteListViewModel @Inject constructor(private val noteUseCases: NoteUseCas
     }
 
 
-}
