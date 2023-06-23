@@ -1,6 +1,8 @@
 package bd.maruf.notesmvvm.domain.use_case
 
+import bd.maruf.notesmvvm.domain.model.Note
 import bd.maruf.notesmvvm.domain.repositry.NoteRepository
+import kotlinx.coroutines.flow.Flow
 
 data class NoteUseCases(
     val getNotes: GetNotes,
@@ -12,8 +14,8 @@ data class NoteUseCases(
 
 
 class GetNotes(private val repository: NoteRepository) {
-    operator fun invoke() {
-        repository.getNotes()
+    operator fun invoke(): Flow<List<Note>> {
+       return repository.getNotes()
 
     }
 }
