@@ -27,8 +27,8 @@ class GetNoteById(private val repository: NoteRepository) {
 }
 
 class InsertNote(private val repository: NoteRepository) {
-    suspend operator fun invoke(id: Int) {
-        repository.getNoteById(id)
+    suspend operator fun invoke(note:Note) {
+        repository.insertNote(note)
     }
 }
 
